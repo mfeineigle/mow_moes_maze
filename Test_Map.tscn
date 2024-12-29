@@ -1,19 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqa73c7p6kahu"]
+[gd_scene load_steps=4 format=3 uid="uid://cqa73c7p6kahu"]
 
 [ext_resource type="PackedScene" uid="uid://cpcy5ece7pimo" path="res://Tile.tscn" id="1_mhkkh"]
 [ext_resource type="PackedScene" uid="uid://cqnafa0vkqqe0" path="res://Player.tscn" id="2_huw5v"]
+[ext_resource type="PackedScene" uid="uid://bhotoc7rnb4is" path="res://rock.tscn" id="3_d0t5u"]
 
 [node name="Test_Map" type="Node2D"]
 
 [node name="Tile" parent="." instance=ExtResource("1_mhkkh")]
+position = Vector2(32, 32)
 
 [node name="Tile2" parent="." instance=ExtResource("1_mhkkh")]
-position = Vector2(160, 4.76837e-07)
+position = Vector2(96, 32)
 
 [node name="Tile3" parent="." instance=ExtResource("1_mhkkh")]
-position = Vector2(320, 0)
+position = Vector2(160, 32)
 
 [node name="Tile4" parent="." instance=ExtResource("1_mhkkh")]
-position = Vector2(480, 9.53674e-07)
+position = Vector2(288, 32)
 
 [node name="Player" parent="." instance=ExtResource("2_huw5v")]
+position = Vector2(40, 120)
+
+[node name="Rock" parent="." instance=ExtResource("3_d0t5u")]
+position = Vector2(224, 32)
+
+[node name="Tile5" parent="." instance=ExtResource("1_mhkkh")]
+position = Vector2(96, 96)
+
+[node name="Tile6" parent="." instance=ExtResource("1_mhkkh")]
+position = Vector2(160, 96)
+
+[node name="Tile7" parent="." instance=ExtResource("1_mhkkh")]
+position = Vector2(224, 96)
+
+[node name="Tile8" parent="." instance=ExtResource("1_mhkkh")]
+position = Vector2(352, 96)
+
+[node name="Rock2" parent="." instance=ExtResource("3_d0t5u")]
+position = Vector2(288, 96)
+
+[node name="Rock3" parent="." instance=ExtResource("3_d0t5u")]
+position = Vector2(-32, 32)
+
+[node name="Rock4" parent="." instance=ExtResource("3_d0t5u")]
+position = Vector2(-32, 96)
