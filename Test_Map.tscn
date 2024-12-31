@@ -6,9 +6,6 @@
 
 [node name="Test_Map" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("2_huw5v")]
-position = Vector2(800, 1224)
-
 [node name="Map" parent="." instance=ExtResource("4_ckk6n")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -16,3 +13,6 @@ anchor_mode = 0
 
 [node name="Truck" parent="." instance=ExtResource("3_c1pqf")]
 position = Vector2(808, 1312)
+
+[node name="Player" parent="." instance=ExtResource("2_huw5v")]
+position = Vector2(1088, 1064)
