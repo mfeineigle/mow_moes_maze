@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6k2m33d7q1gf"]
+
+[ext_resource type="PackedScene" uid="uid://bhdxirfo0dftp" path="res://tools/tool.tscn" id="1_y6jcl"]
+[ext_resource type="Texture2D" uid="uid://blm7cvnturau1" path="res://assets/tools/weed_wacker.png" id="2_baa3p"]
+[ext_resource type="Script" path="res://tools/weed_wacker.gd" id="2_v5wh3"]
+
+[node name="Weed_Wacker" instance=ExtResource("1_y6jcl")]
+script = ExtResource("2_v5wh3")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_baa3p")
