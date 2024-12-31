@@ -128,9 +128,7 @@ libraries = {
 
 [node name="Push_Mower" parent="Tools" instance=ExtResource("3_r03tr")]
 position = Vector2(-35, 0)
-stamina_cost = 2
 
 [node name="Weed_Wacker" parent="Tools" instance=ExtResource("4_bsd4i")]
 visible = false
 position = Vector2(30, 0)
-stamina_cost = 3

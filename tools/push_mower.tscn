@@ -6,6 +6,8 @@
 
 [node name="Push_Mower" instance=ExtResource("1_fr6q7")]
 script = ExtResource("2_ps66j")
+stamina_cost = 2
+fuel_cost = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_xr7vs")
