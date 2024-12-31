@@ -18,3 +18,6 @@ func move(dir) -> void:
 			position.x = 0
 			position.y = 45
 			rotation = -PI/2
+
+func activate() -> int:
+	return fuel_cost
