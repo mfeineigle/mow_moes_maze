@@ -14,10 +14,13 @@ func _on_area_shape_player_entered(_area_rid: RID,
 									_area_shape_index: int,
 									_local_shape_index: int) -> void:
 	if area.is_in_group("player"):
-		if is_cut:
-			return
-		else:
-			print("cut the grass")
-			$Uncut.visible = false
-			$Cut.visible = true
-			is_cut = true
+		mow()
+
+func mow() -> void:
+	if is_cut:
+		return
+	else:
+		print("cut the grass")
+		$Uncut.visible = false
+		$Cut.visible = true
+		is_cut = true
