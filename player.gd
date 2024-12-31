@@ -6,10 +6,12 @@ extends Area2D
 @onready var tools: Node = $Tools
 @onready var push_mower: Area2D = $Tools/Push_Mower
 @onready var weed_wacker: Area2D = $Tools/Weed_Wacker
-
 @onready var current_tool: Tool
 
+
+var at_truck: bool = false
 var stamina_level: int = 0
+var fuel_level: int = 0
 var animation_speed: int = 8
 var moving: bool = false
 var tile_size = 64
@@ -29,8 +31,11 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
-	if event.is_action_pressed("change_tool"):
-		current_tool = change_tool(current_tool)
+	if current_tool == weed_wacker and event.is_action_pressed("whack_weeds"):
+		fuel_level += current_tool.activate()
+		print("fuel: ", fuel_level)
+	if at_truck and event.is_action_pressed("change_tool"):
+		GameEvents.changed_tool.emit(self)
 		print("changing")
 
 func _process(_delta: float) -> void:
@@ -40,6 +45,9 @@ func _process(_delta: float) -> void:
 		for dir in inputs.keys():
 			if Input.is_action_pressed(dir):
 				move(dir)
+				if current_tool != weed_wacker:
+					fuel_level += current_tool.activate()
+					print("fuel: ",fuel_level)
 				for tool in tools.get_children():
 					tool.move(dir)
 				
@@ -68,16 +76,4 @@ func move(dir):
 	else:
 		print("hit something")
 	stamina_level += current_tool.stamina_cost
-	print(stamina_level)
-
-func change_tool(_current_tool) -> Tool:
-	match _current_tool:
-		push_mower:
-			push_mower.visible = false
-			weed_wacker.visible = true
-			return weed_wacker
-		weed_wacker:
-			weed_wacker.visible = false
-			push_mower.visible = true
-			return push_mower
-	return _current_tool
+	print("sta: ", stamina_level)
