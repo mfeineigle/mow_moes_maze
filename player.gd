@@ -8,7 +8,8 @@ extends Area2D
 @onready var weed_wacker: Area2D = $Tools/Weed_Wacker
 @onready var current_tool: Tool
 
-
+var cur_dir: Vector2 = Vector2.LEFT
+var last_dir: Vector2 = Vector2.LEFT
 var at_truck: bool = false
 var stamina_level: int = 0
 var fuel_level: int = 0
@@ -31,9 +32,9 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
-	if current_tool == weed_wacker and event.is_action_pressed("whack_weeds"):
+	if current_tool == weed_wacker and event.is_action_pressed("wack_weeds"):
 		fuel_level += current_tool.activate()
-		print("fuel: ", fuel_level)
+		GameEvents.fuel_changed.emit(fuel_level)
 	if at_truck and event.is_action_pressed("change_tool"):
 		GameEvents.changed_tool.emit(self)
 		print("changing")
@@ -45,9 +46,6 @@ func _process(_delta: float) -> void:
 		for dir in inputs.keys():
 			if Input.is_action_pressed(dir):
 				move(dir)
-				if current_tool != weed_wacker:
-					fuel_level += current_tool.activate()
-					print("fuel: ",fuel_level)
 				for tool in tools.get_children():
 					tool.move(dir)
 				
@@ -73,7 +71,11 @@ func move(dir):
 		moving = true
 		await tween.finished
 		moving = false
+		stamina_level += current_tool.stamina_cost
+		GameEvents.stamina_changed.emit(stamina_level)
+		if current_tool != weed_wacker:
+			fuel_level += current_tool.activate()
+			GameEvents.fuel_changed.emit(fuel_level)
+		GameEvents.steps_changed.emit()
 	else:
 		print("hit something")
-	stamina_level += current_tool.stamina_cost
-	print("sta: ", stamina_level)
