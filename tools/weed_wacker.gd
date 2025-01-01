@@ -1,5 +1,6 @@
 extends Tool
 
+
 func move(dir) -> void:
 	match dir:
 		"move_left":
@@ -18,3 +19,7 @@ func move(dir) -> void:
 			position.x = 0
 			position.y = 35
 			rotation = 0
+
+func activate() -> int:
+	get_overlapping_areas()[-1].mow()
+	return fuel_cost
