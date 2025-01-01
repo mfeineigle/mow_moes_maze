@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b6k2m33d7q1gf" path="res://tools/weed_wacker.tscn" id="4_bsd4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y4fi"]
-size = Vector2(10, 18)
+size = Vector2(23, 57)
 
 [sub_resource type="Animation" id="Animation_c55o4"]
 length = 0.001
@@ -113,7 +113,7 @@ vframes = 4
 frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_2y4fi")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
