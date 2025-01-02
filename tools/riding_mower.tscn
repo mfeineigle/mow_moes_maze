@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://caji8sohjjv33"]
+
+[ext_resource type="Texture2D" uid="uid://dorscr1shy5m5" path="res://assets/tools/riding_mower.png" id="1_lj1t2"]
+[ext_resource type="Script" path="res://tools/riding_mower.gd" id="1_t41r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0p4iw"]
+size = Vector2(192, 192)
+
+[node name="Riding_Mower" type="Area2D"]
+script = ExtResource("1_t41r6")
+fuel_cost = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lj1t2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0p4iw")

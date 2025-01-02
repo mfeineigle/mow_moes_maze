@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqnafa0vkqqe0"]
+[gd_scene load_steps=13 format=3 uid="uid://cqnafa0vkqqe0"]
 
 [ext_resource type="Texture2D" uid="uid://i22x0uoiit80" path="res://assets/player/player.png" id="1_a4cnr"]
 [ext_resource type="Script" path="res://characters/player.gd" id="1_uk2tt"]
 [ext_resource type="PackedScene" uid="uid://77lo8gbwablu" path="res://tools/push_mower.tscn" id="3_r03tr"]
 [ext_resource type="PackedScene" uid="uid://b6k2m33d7q1gf" path="res://tools/weed_wacker.tscn" id="4_bsd4i"]
+[ext_resource type="PackedScene" uid="uid://caji8sohjjv33" path="res://tools/riding_mower.tscn" id="5_5bftx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y4fi"]
 size = Vector2(23, 57)
@@ -127,8 +128,14 @@ libraries = {
 [node name="Tools" type="Node2D" parent="."]
 
 [node name="Push_Mower" parent="Tools" instance=ExtResource("3_r03tr")]
+visible = false
 position = Vector2(-35, 0)
 
 [node name="Weed_Wacker" parent="Tools" instance=ExtResource("4_bsd4i")]
 visible = false
 position = Vector2(30, 0)
+
+[node name="Riding_Mower" parent="Tools" instance=ExtResource("5_5bftx")]
+visible = false
+position = Vector2(0, 32)
+rotation = 4.71239

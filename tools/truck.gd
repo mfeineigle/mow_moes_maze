@@ -10,10 +10,17 @@ func _on_changed_tool(player) -> void:
 		player.push_mower:
 			player.push_mower.visible = false
 			player.weed_wacker.visible = true
+			player.riding_mower.visible = false
 			player.current_tool = player.weed_wacker
 		player.weed_wacker:
 			player.weed_wacker.visible = false
+			player.push_mower.visible = false
+			player.riding_mower.visible = true
+			player.current_tool = player.riding_mower
+		player.riding_mower:
 			player.push_mower.visible = true
+			player.weed_wacker.visible = false
+			player.riding_mower.visible = false
 			player.current_tool = player.push_mower
 
 

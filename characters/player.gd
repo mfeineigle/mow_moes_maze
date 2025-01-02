@@ -6,6 +6,7 @@ extends Area2D
 @onready var tools: Node = $Tools
 @onready var push_mower: Area2D = $Tools/Push_Mower
 @onready var weed_wacker: Area2D = $Tools/Weed_Wacker
+@onready var riding_mower: Area2D = $Tools/Riding_Mower
 @onready var current_tool: Tool
 
 var cur_dir: Vector2 = Vector2.LEFT
@@ -22,10 +23,10 @@ var inputs = {"move_right": Vector2.RIGHT,
 			  "move_down": Vector2.DOWN}
 
 func _ready():
-	print("test")
 	position = position.snapped(Vector2.ONE * tile_size)
 	position += Vector2.ONE * tile_size/2
 	current_tool = push_mower
+	push_mower.visible = true
 	for tool in tools.get_children():
 		tool.move("move_left")
 	print(current_tool)
