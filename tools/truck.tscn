@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt1ggwf6wceyq"]
 
 [ext_resource type="Texture2D" uid="uid://dhkq05it8t7v1" path="res://assets/truck.png" id="1_b4aly"]
-[ext_resource type="Script" path="res://truck.gd" id="1_ttdli"]
+[ext_resource type="Script" path="res://tools/truck.gd" id="1_ttdli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d1ml"]
 size = Vector2(240, 56)

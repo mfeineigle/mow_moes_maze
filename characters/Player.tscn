@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cqnafa0vkqqe0"]
 
 [ext_resource type="Texture2D" uid="uid://i22x0uoiit80" path="res://assets/player/player.png" id="1_a4cnr"]
-[ext_resource type="Script" path="res://player.gd" id="1_uk2tt"]
+[ext_resource type="Script" path="res://characters/player.gd" id="1_uk2tt"]
 [ext_resource type="PackedScene" uid="uid://77lo8gbwablu" path="res://tools/push_mower.tscn" id="3_r03tr"]
 [ext_resource type="PackedScene" uid="uid://b6k2m33d7q1gf" path="res://tools/weed_wacker.tscn" id="4_bsd4i"]
 

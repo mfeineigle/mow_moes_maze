@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpcy5ece7pimo"]
 
 [ext_resource type="Texture2D" uid="uid://gobg21y2kkbp" path="res://assets/grass/grass_long.png" id="1_25ivm"]
-[ext_resource type="Script" path="res://tile.gd" id="1_kkd3r"]
+[ext_resource type="Script" path="res://maps/tile.gd" id="1_kkd3r"]
 [ext_resource type="Texture2D" uid="uid://khakfe1qcnep" path="res://assets/grass/grass_cut.png" id="3_s2rsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qm73"]

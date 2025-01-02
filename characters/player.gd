@@ -22,11 +22,13 @@ var inputs = {"move_right": Vector2.RIGHT,
 			  "move_down": Vector2.DOWN}
 
 func _ready():
+	print("test")
 	position = position.snapped(Vector2.ONE * tile_size)
 	position += Vector2.ONE * tile_size/2
 	current_tool = push_mower
 	for tool in tools.get_children():
 		tool.move("move_left")
+	print(current_tool)
 	
 
 func _unhandled_input(event):

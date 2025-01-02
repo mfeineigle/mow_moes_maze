@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqa73c7p6kahu"]
+
+[ext_resource type="PackedScene" uid="uid://cqnafa0vkqqe0" path="res://characters/Player.tscn" id="2_huw5v"]
+[ext_resource type="PackedScene" uid="uid://dt1ggwf6wceyq" path="res://tools/truck.tscn" id="3_c1pqf"]
+[ext_resource type="PackedScene" uid="uid://bei0qvaeecx1l" path="res://maps/map.tscn" id="4_ckk6n"]
+[ext_resource type="PackedScene" uid="uid://5b3f5wo0bcr2" path="res://ui/ui.tscn" id="4_geukf"]
+
+[node name="Test_Map" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Map" parent="." instance=ExtResource("4_ckk6n")]
+
+[node name="UI" parent="." instance=ExtResource("4_geukf")]
+
+[node name="Truck" parent="." instance=ExtResource("3_c1pqf")]
+position = Vector2(968, 928)
+
+[node name="Player" parent="." instance=ExtResource("2_huw5v")]
+position = Vector2(1176, 912)
