@@ -10,5 +10,13 @@ class_name Tool
 # orients the tool in the correct dir
 #func move(dir) -> void:
 
+@onready var collision: CollisionShape2D = $CollisionShape2D
+
+func disable() -> void:
+	collision.disabled = true
+	
+func enable() -> void:
+	collision.disabled = false
+	
 func activate() -> int:
 	return 0

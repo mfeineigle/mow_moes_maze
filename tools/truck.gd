@@ -14,17 +14,23 @@ func _on_changed_tool(player) -> void:
 		player.push_mower:
 			# Hide the push_mower and display the weed_wacker
 			player.push_mower.visible = false
+			player.push_mower.disable()
 			player.weed_wacker.visible = true
+			player.weed_wacker.enable()
 			player.current_tool = player.weed_wacker
 		player.weed_wacker:
 			# Hide the weed_wacker and display the riding_mower
 			player.weed_wacker.visible = false
+			player.weed_wacker.disable()
 			player.riding_mower.visible = true
+			player.riding_mower.enable()
 			player.current_tool = player.riding_mower
 			# Hide the riding_mower and display the push_mower
 		player.riding_mower:
 			player.push_mower.visible = true
+			player.push_mower.disable()
 			player.riding_mower.visible = false
+			player.riding_mower.enable()
 			player.current_tool = player.push_mower
 		_:
 			# Optionally handle an unexpected tool or do nothing
