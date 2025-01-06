@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://tools/tool.gd" id="1_mvp56"]
 
-[node name="Tool" type="Area2D"]
+[node name="Tool" type="Area2D" groups=["tool"]]
 script = ExtResource("1_mvp56")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

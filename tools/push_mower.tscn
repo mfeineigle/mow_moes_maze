@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://tools/push_mower.gd" id="2_ps66j"]
 [ext_resource type="Texture2D" uid="uid://bkldq2d4m2pjv" path="res://assets/tools/push_mower.png" id="2_xr7vs"]
 
-[node name="Push_Mower" instance=ExtResource("1_fr6q7")]
+[node name="Push_Mower" groups=["tool"] instance=ExtResource("1_fr6q7")]
 script = ExtResource("2_ps66j")
 stamina_cost = 2
 fuel_cost = 2
