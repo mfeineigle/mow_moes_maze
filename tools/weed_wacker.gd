@@ -21,5 +21,4 @@ func move(dir) -> void:
 			rotation = 0
 
 func activate() -> int:
-	get_overlapping_areas()[-1].mow()
 	return fuel_cost
