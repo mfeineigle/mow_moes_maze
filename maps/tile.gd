@@ -21,7 +21,7 @@ func mow() -> void:
 	if is_cut:
 		return
 	else:
-		print("cut the grass")
+		#print("cut the grass")
 		$Uncut.visible = false
 		$Cut.visible = true
 		is_cut = true
