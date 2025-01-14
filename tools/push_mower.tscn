@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bkldq2d4m2pjv" path="res://assets/tools/push_mower.png" id="2_xr7vs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ol7cq"]
-radius = 32.0
+radius = 8.0
 
 [node name="Push_Mower" instance=ExtResource("1_fr6q7")]
 script = ExtResource("2_ps66j")
@@ -16,4 +16,5 @@ fuel_cost = 2
 texture = ExtResource("2_xr7vs")
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(24, 0)
 shape = SubResource("CircleShape2D_ol7cq")
