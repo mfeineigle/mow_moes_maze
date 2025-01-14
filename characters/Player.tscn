@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/player.gd" id="1_uk2tt"]
 [ext_resource type="PackedScene" uid="uid://77lo8gbwablu" path="res://tools/push_mower.tscn" id="3_r03tr"]
 [ext_resource type="PackedScene" uid="uid://b6k2m33d7q1gf" path="res://tools/weed_wacker.tscn" id="4_bsd4i"]
-[ext_resource type="PackedScene" uid="uid://caji8sohjjv33" path="res://tools/riding_mower.tscn" id="5_5bftx"]
+[ext_resource type="PackedScene" uid="uid://b2ah6175xhaox" path="res://tools/riding_mower.tscn" id="5_5bftx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y4fi"]
 size = Vector2(23, 57)
@@ -117,9 +117,6 @@ frame = 4
 position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_2y4fi")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ooowl")
@@ -139,3 +136,18 @@ position = Vector2(30, 0)
 visible = false
 position = Vector2(0, 32)
 rotation = 4.71239
+
+[node name="rays" type="Node2D" parent="."]
+
+[node name="left_ray" type="RayCast2D" parent="rays"]
+
+[node name="center_ray" type="RayCast2D" parent="rays"]
+modulate = Color(1, 0, 0, 1)
+target_position = Vector2(-50, 0)
+
+[node name="right_ray" type="RayCast2D" parent="rays"]
+target_position = Vector2(0, -50)
+
+[node name="rear_ray" type="RayCast2D" parent="rays"]
+modulate = Color(1, 0, 0, 1)
+target_position = Vector2(50, 0)
